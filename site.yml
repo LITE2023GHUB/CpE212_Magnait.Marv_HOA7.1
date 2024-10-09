@@ -5,10 +5,12 @@
 
   - name: Update repository Index (CentOS)
     tags: always
-    dnf:
+    yum:
+      name: "*"
       update_cache: yes
     changed_when: false
     when: ansible_distribution == "CentOS"
+
   - name: Update repository Index (Ubuntu)
     tags: always
     apt:
